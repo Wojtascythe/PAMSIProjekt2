@@ -1,0 +1,36 @@
+#pragma once
+#define TYP int
+#include <iostream>
+#include "tworzenieTablic.h"
+#include "sortowania.h"
+#define WIELKOSC 10000
+using namespace std;
+
+
+int main(){
+
+TYP tablica[WIELKOSC];
+wszystkieLosowe<TYP>(tablica, WIELKOSC);
+cout<<"WSZYSTKIE LOSOWE:\n";
+for (int i=0;i<WIELKOSC;i++) cout<<"["<<i+1<<"] "<<tablica[i]<<endl;
+czescLosowe<TYP>(tablica,99.7,WIELKOSC);
+
+cout<<endl<<"----------------\n";
+
+cout<<"99.7% POSORTOWANE:\n";
+for (int i=0;i<WIELKOSC;i++) cout<<"["<<i+1<<"] "<<tablica[i]<<endl;
+cout<<endl<<"-----------\n";
+
+wszystkieOdwrocone(tablica, WIELKOSC);
+cout<<"WSZYSTKIE ODWROCONE:\n";
+for (int i=0;i<WIELKOSC;i++) cout<<"["<<i+1<<"] "<<tablica[i]<<endl;
+
+ wszystkieLosowe<TYP>(tablica,WIELKOSC);
+ cout<<"------------\n TEST QUICKSORT:\n NIEPOSORTOWANE\n";
+ for (int i=0;i<WIELKOSC;i++) cout<<"["<<i+1<<"] "<<tablica[i]<<endl;
+
+ quicksort(tablica,0,WIELKOSC-1);
+ cout<<"POSORTOWANE\n";
+ for (int i=0;i<WIELKOSC;i++) cout<<"["<<i+1<<"] "<<tablica[i]<<endl;
+
+};
